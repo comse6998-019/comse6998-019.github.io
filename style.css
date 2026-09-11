@@ -298,6 +298,12 @@ main {
   color: var(--text-secondary);
 }
 
+.staff__email {
+  margin-top: var(--sp-03);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
 /* ---------- Data table (Carbon) ---------- */
 
 .data-table {
