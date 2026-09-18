@@ -160,7 +160,7 @@
           There is no authoritative textbook on LLM agent systems yet, so the
           course runs on papers, systems texts, and engineering write-ups, all
           listed in the <a href="#schedule">schedule</a> under the week that
-          assigns them. Read the named section, not the whole paper. Three books
+          assigns them. Read the named section, not the whole paper. Four books
           serve as companions:
         </p>
         <ul>
@@ -178,6 +178,12 @@
             <a href="https://artint.info/3e/html/ArtInt3e.Ch2.html">Foundations of Computational Agents</a>,
             free online: chapter 2 gives the pre-LLM vocabulary for controller,
             environment, and belief state.
+          </li>
+          <li>
+            Russell and Norvig,
+            <a href="https://aima.cs.berkeley.edu/">Artificial Intelligence: A Modern Approach</a>
+            (4th ed.): chapter 2 for agents, environments, and agent programs;
+            &sect;11.5.3 for online planning.
           </li>
         </ul>
       </div>
@@ -201,21 +207,27 @@
               <b>HW1</b>: Bounded agent execution
               <ul>
                 <li>
-                  Build a sequential reactive agent that triages one JSON alert
-                  against a pinned repository with local search/read tools and
-                  returns a structured TP/FP/Other finding with evidence
-                  references.
+                  Build a bounded triage application over a pinned repository:
+                  an intake stage that runs pinned Semgrep and Bandit and
+                  normalizes both outputs into one alert contract, a planner, a
+                  sequential reactive investigation loop with local search/read
+                  tools, structured TP/FP/Other findings with evidence
+                  references, and a report across the selected alerts.
                 </li>
                 <li>
-                  Add a configurable per-run token budget: pre-call admission
-                  with an output allowance, post-call reconciliation of reported
-                  usage, and an explicit exhaustion outcome.
+                  Add a configurable per-investigation token budget: pre-call
+                  admission with an output allowance, post-call reconciliation
+                  of reported usage, and an explicit exhaustion outcome.
                 </li>
                 <li>
-                  Experiment: one normal run and one scripted exhaustion run,
-                  showing the runtime refuses an unaffordable invocation. The
-                  report also explains your architecture and state model and
-                  compares alternative architectures analytically.
+                  Experiment: one normal run over a small alert set and one
+                  scripted exhaustion run on a single investigation, showing the
+                  runtime refuses an unaffordable invocation. The report explains
+                  which decisions are fixed at design time and which are deferred
+                  to the model, your state model, and the architecture you
+                  adopted and why. The lecture demo (V0&ndash;V4) is published as
+                  scaffolding; the intake contract, budget policy, exhaustion
+                  outcome, and evidence resolution must be your own.
                 </li>
               </ul>
             </li>
@@ -413,11 +425,12 @@
               <td>Fri Sep 18</td>
               <td>Agent architectures, state, and dynamic control flow: fixed workflows, ReAct, plan&ndash;execute; who chooses the next operation</td>
               <td>
-                <a href="https://arxiv.org/abs/2210.03629">ReAct</a> &sect;2;
-                <a href="https://docs.langchain.com/oss/python/langgraph/workflows-agents">LangGraph workflows and agents</a>;
-                <a href="https://arxiv.org/abs/2303.11366">Reflexion</a> &sect;3
+                <a href="https://arxiv.org/abs/2210.03629">ReAct</a> &sect;2, fig. 1, one trajectory;
+                <a href="https://arxiv.org/abs/2303.11366">Reflexion</a> &sect;3;
+                <a href="https://aima.cs.berkeley.edu/">AIMA</a> &sect;2.3.2, &sect;&sect;2.4.1&ndash;2.4.5;
+                <a href="https://docs.langchain.com/oss/python/langgraph/workflows-agents">LangGraph workflows and agents</a> (HW1 setup)
               </td>
-              <td>HW1 <span class="pill pill-out">out</span></td>
+              <td></td>
             </tr>
             <tr class="u1">
               <td>3</td>
@@ -428,7 +441,7 @@
                 <a href="https://arxiv.org/abs/2407.01502">AI Agents That Matter</a> &sect;&sect;3&ndash;4;
                 <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/">DDIA2</a> ch. 2
               </td>
-              <td></td>
+              <td>HW1 <span class="pill pill-out">out</span></td>
             </tr>
             <tr class="u2">
               <td>4</td>
@@ -439,11 +452,7 @@
                 <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works">native tool use</a>;
                 <a href="https://arxiv.org/abs/2305.15334">Gorilla</a> &sect;3.3
               </td>
-              <td>
-                HW1 <span class="pill pill-due">due</span>
-                <br />
-                HW2 <span class="pill pill-out">out</span>
-              </td>
+              <td>HW2 <span class="pill pill-out">out</span></td>
             </tr>
             <tr class="u2">
               <td>5</td>
@@ -466,14 +475,18 @@
                 <a href="https://docs.arcjet.com/">Arcjet docs</a>;
                 <a href="https://arxiv.org/abs/2503.18813">CaMeL</a> &sect;5 (optional)
               </td>
-              <td>HW2 <span class="pill pill-due">due</span></td>
+              <td>HW1 <span class="pill pill-due">due</span></td>
             </tr>
             <tr class="exam">
               <td>7</td>
               <td>Fri Oct 23</td>
               <td><b>Midterm exam</b> (in class, one hour). No lecture</td>
               <td>Review weeks 1&ndash;6</td>
-              <td><span class="pill pill-exam">midterm</span></td>
+              <td>
+                HW2 <span class="pill pill-due">due</span>
+                <br />
+                <span class="pill pill-exam">midterm</span>
+              </td>
             </tr>
             <tr class="u3">
               <td>8</td>
