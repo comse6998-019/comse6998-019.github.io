@@ -158,10 +158,9 @@
         <h3>Books and readings</h3>
         <p>
           There is no authoritative textbook on LLM agent systems yet, so the
-          course runs on papers, systems texts, and engineering write-ups, all
-          listed in the <a href="#schedule">schedule</a> under the week that
-          assigns them. Read the named section, not the whole paper. Four books
-          serve as companions:
+          course runs on papers, systems texts, and engineering write-ups,
+          assigned with each week's lecture materials. Read the named section,
+          not the whole paper. Four books serve as companions:
         </p>
         <ul>
           <li>
@@ -390,9 +389,9 @@
         <table class="data-table" id="schedule-table">
           <colgroup>
             <col style="width: 5%" />
+            <col style="width: 12%" />
+            <col style="width: 50%" />
             <col style="width: 13%" />
-            <col style="width: 37%" />
-            <col style="width: 25%" />
             <col style="width: 20%" />
           </colgroup>
           <thead>
@@ -400,7 +399,7 @@
               <th>#</th>
               <th>Date</th>
               <th>Description</th>
-              <th>Reading</th>
+              <th>Lecture Slides</th>
               <th>Deadlines</th>
             </tr>
           </thead>
@@ -408,15 +407,9 @@
             <tr class="u1">
               <td>1</td>
               <td>Fri Sep 11</td>
+              <td>Map the system: model, controller, tools, state, environment; one alert-to-finding trace</td>
               <td>
-                Map the system: model, controller, tools, state, environment; one alert-to-finding trace
-                <br />
-                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-1--2026-09-11/slides.pptx">Slides</a>
-              </td>
-              <td>
-                <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a>;
-                <a href="https://artint.info/3e/html/ArtInt3e.Ch2.html">Poole &amp; Mackworth</a> &sect;&sect;2.1&ndash;2.3;
-                <a href="https://arxiv.org/abs/2309.02427">CoALA</a> &sect;4
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-1--2026-09-11/lecture1.pptx">Slides</a>
               </td>
               <td>Teams and repositories set up</td>
             </tr>
@@ -425,10 +418,9 @@
               <td>Fri Sep 18</td>
               <td>Agent architectures, state, and dynamic control flow: fixed workflows, ReAct, plan&ndash;execute; who chooses the next operation</td>
               <td>
-                <a href="https://arxiv.org/abs/2210.03629">ReAct</a> &sect;2, fig. 1, one trajectory;
-                <a href="https://arxiv.org/abs/2303.11366">Reflexion</a> &sect;3;
-                <a href="https://aima.cs.berkeley.edu/">AIMA</a> &sect;2.3.2, &sect;&sect;2.4.1&ndash;2.4.5;
-                <a href="https://docs.langchain.com/oss/python/langgraph/workflows-agents">LangGraph workflows and agents</a> (HW1 setup)
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-2--2026-09-18/lecture2.pptx">Slides</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/tree/main/lecture-2--2026-09-18/notes">Notes</a>
               </td>
               <td></td>
             </tr>
@@ -436,102 +428,71 @@
               <td>3</td>
               <td>Fri Sep 25</td>
               <td>Termination, token budgets, and controlled measurement: admission versus accounting, output reservations, exhaustion outcomes</td>
-              <td>
-                <a href="https://platform.claude.com/docs/en/build-with-claude/token-counting">Token counting</a>;
-                <a href="https://arxiv.org/abs/2407.01502">AI Agents That Matter</a> &sect;&sect;3&ndash;4;
-                <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/">DDIA2</a> ch. 2
-              </td>
+              <td><i>-</i></td>
               <td>HW1 <span class="pill pill-out">out</span></td>
             </tr>
             <tr class="u2">
               <td>4</td>
               <td>Fri Oct 2</td>
               <td>Tool contracts and execution boundaries: schemas, validation, discovery, local dispatch versus RPC, transport versus domain failures</td>
-              <td>
-                <a href="https://modelcontextprotocol.io/docs/learn/architecture">MCP architecture</a>;
-                <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works">native tool use</a>;
-                <a href="https://arxiv.org/abs/2305.15334">Gorilla</a> &sect;3.3
-              </td>
-              <td>HW2 <span class="pill pill-out">out</span></td>
+              <td><i>-</i></td>
+              <td></td>
             </tr>
             <tr class="u2">
               <td>5</td>
               <td>Fri Oct 9</td>
               <td>Action composition and dependency-aware workflows: stage contracts, dependency DAGs, fork/join, bounded fan-out, critical paths</td>
-              <td>
-                <a href="https://arxiv.org/html/2312.04511v3">LLMCompiler</a> fig. 2, &sect;&sect;3.1&ndash;3.3;
-                <a href="https://arxiv.org/html/2402.01030v4">CodeAct</a> &sect;2.1;
-                <a href="https://arxiv.org/abs/2412.07017">AsyncLM</a> &sect;3 (optional)
-              </td>
+              <td><i>-</i></td>
               <td></td>
             </tr>
             <tr class="u2">
               <td>6</td>
               <td>Fri Oct 16</td>
               <td>Controlled execution experiments: sequential and concurrent timelines, dependency stalls, overhead, one failure trace. Agentic security: guarding the tool boundary against prompt injection and abuse</td>
+              <td><i>-</i></td>
               <td>
-                <a href="https://arxiv.org/abs/2302.12173">Indirect prompt injection</a> &sect;3;
-                <a href="https://arxiv.org/abs/2506.08837">Design patterns for securing agents</a> &sect;3;
-                <a href="https://docs.arcjet.com/">Arcjet docs</a>;
-                <a href="https://arxiv.org/abs/2503.18813">CaMeL</a> &sect;5 (optional)
+                HW1 <span class="pill pill-due">due</span>
+                <br />
+                HW2 <span class="pill pill-out">out</span>
               </td>
-              <td>HW1 <span class="pill pill-due">due</span></td>
             </tr>
             <tr class="exam">
               <td>7</td>
               <td>Fri Oct 23</td>
               <td><b>Midterm exam</b> (in class, one hour). No lecture</td>
-              <td>Review weeks 1&ndash;6</td>
-              <td>
-                HW2 <span class="pill pill-due">due</span>
-                <br />
-                <span class="pill pill-exam">midterm</span>
-              </td>
+              <td><i>No lecture (exam)</i></td>
+              <td><span class="pill pill-exam">midterm</span></td>
             </tr>
             <tr class="u3">
               <td>8</td>
               <td>Fri Oct 30</td>
               <td>Context working sets, compaction, and provenance: selection versus lossy summarization, artifact references, source identity</td>
-              <td>
-                <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Context engineering</a>;
-                <a href="https://arxiv.org/abs/2310.08560">MemGPT</a> &sect;2;
-                <a href="https://aclanthology.org/2024.tacl-1.9.pdf">Lost in the Middle</a> (optional)
-              </td>
+              <td><i>-</i></td>
               <td></td>
             </tr>
             <tr class="u3">
               <td>9</td>
               <td>Fri Nov 6</td>
               <td>State ownership, checkpointing, and resumption: run-local versus durable state, checkpoint boundaries, replay</td>
-              <td>
-                LangGraph
-                <a href="https://docs.langchain.com/oss/python/langgraph/persistence">persistence</a>
-                and
-                <a href="https://docs.langchain.com/oss/python/langgraph/checkpointers">checkpointers</a>;
-                <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2021/10/DF-Semantics-Final.pdf">Durable Functions</a> &sect;&sect;2.1&ndash;2.2, 3.5
-              </td>
+              <td><i>-</i></td>
               <td></td>
             </tr>
             <tr class="u4">
               <td>10</td>
               <td>Fri Nov 13</td>
               <td>Deployment and service lifecycle: reconciliation, Pods and Services, readiness and liveness, ephemeral versus persistent storage</td>
+              <td><i>-</i></td>
               <td>
-                <a href="https://kubernetes.io/docs/concepts/workloads/pods/probes/">Kubernetes probes</a>;
-                <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">KIND quick start</a>
+                HW2 <span class="pill pill-due">due</span>
+                <br />
+                HW3 <span class="pill pill-out">out</span>
               </td>
-              <td>HW3 <span class="pill pill-out">out</span></td>
             </tr>
             <tr class="u4">
               <td>11</td>
               <td>Fri Nov 20</td>
               <td>Partial failure and bounded recovery: deadlines, retry amplification, backoff, idempotent writes, uncertain outcomes</td>
-              <td>
-                <a href="https://sre.google/sre-book/addressing-cascading-failures/">SRE: cascading failures</a>;
-                <a href="https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s11-bronson.pdf">Metastable failures</a> &sect;&sect;1, 2.1;
-                <a href="https://www.cidrdb.org/cidr2007/papers/cidr07p15.pdf">Life beyond distributed transactions</a> &sect;5;
-                <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/">DDIA2</a> ch. 9
-              </td>
+              <td><i>-</i></td>
               <td></td>
             </tr>
             <tr class="brk">
@@ -545,29 +506,21 @@
               <td>12</td>
               <td>Fri Dec 4</td>
               <td>Observability and recovery measurement: correlated events, service signals, end-to-end latency, completed versus repeated work</td>
-              <td>
-                <a href="https://sre.google/sre-book/monitoring-distributed-systems/">SRE: monitoring</a>;
-                <a href="https://research.google/pubs/dapper-a-large-scale-distributed-systems-tracing-infrastructure/">Dapper</a> &sect;&sect;2.1&ndash;2.3;
-                <a href="https://research.google/pubs/the-tail-at-scale/">The Tail at Scale</a>
-              </td>
+              <td><i>-</i></td>
               <td></td>
             </tr>
             <tr class="studio">
               <td>13</td>
               <td>Fri Dec 11</td>
               <td>Integration studio: trace one job end to end across components, identify limitations, fix integration defects</td>
-              <td>
-                Your team's reports and traces;
-                <a href="https://arxiv.org/abs/2411.00640">Adding error bars to evals</a>;
-                <a href="https://arxiv.org/abs/2406.12045">&tau;-bench</a> (optional)
-              </td>
+              <td><i>-</i></td>
               <td>HW3 <span class="pill pill-due">due</span></td>
             </tr>
             <tr class="exam">
               <td>14</td>
               <td>Thu Dec 17</td>
               <td><b>Final exam</b> (individual, closed book). No regular class</td>
-              <td>Review weeks 1&ndash;13</td>
+              <td><i>No lecture (exam)</i></td>
               <td><span class="pill pill-exam">final exam</span></td>
             </tr>
           </tbody>
