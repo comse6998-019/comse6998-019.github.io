@@ -10,14 +10,14 @@
     />
     <meta name="robots" content="index,follow" />
     <meta name="author" content="COMS 6998-019 Staff" />
-    <link rel="canonical" href="https://coms6998-e019.github.io/" />
+    <link rel="canonical" href="https://comse6998-019.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Columbia COMS 6998-019 | Design of Production Agentic Systems" />
     <meta
       property="og:description"
       content="Official course website for Columbia COMS 6998-019: Design of Production Agentic Systems (Fall 2026), including logistics, schedule, homework, and readings."
     />
-    <meta property="og:url" content="https://coms6998-e019.github.io/" />
+    <meta property="og:url" content="https://comse6998-019.github.io/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- IBM Plex, the Carbon Design System type family -->
@@ -215,9 +215,10 @@
                   severity and label every alert 1 (potential vulnerability) or
                   0 (not a vulnerability) with a rationale and line evidence.
                   The brief fixes the command line, the TOML configuration, the
-                  report.json and trace.jsonl outputs, and the README contract,
-                  each validated against a shipped JSON Schema; everything
-                  behind them is your design. There is no starter code.
+                  report.json and trace.jsonl outputs, and the README. The
+                  configuration and both outputs are validated against shipped
+                  JSON Schemas; everything behind them is your design. There is
+                  no starter code.
                 </li>
                 <li>
                   Three pinned targets: OWASP BenchmarkPython is the development
@@ -227,7 +228,8 @@
                 </li>
                 <li>
                   Required mechanisms: a disposable workspace that withholds
-                  .git and the answer key behind one path check; a dispatcher
+                  .git, the answer key, and the other OWASP test cases behind
+                  one path check; a dispatcher
                   that turns unknown tools and bad arguments into refusal
                   observations; a run-level token budget charged from
                   provider-reported usage and checked before each model call,
@@ -352,14 +354,14 @@
               instructions.
             </li>
             <li>
-              Include configuration, pinned dependencies, snapshots, raw logs,
+              Include configuration, pinned dependencies, raw logs,
               and a short contribution statement.
             </li>
             <li>
               The supported stack is the one used in lecture
               (<a href="https://docs.langchain.com/oss/python/langgraph/workflows-agents">LangGraph</a>);
-              another framework is fine if it meets the same behavioral
-              expectations.
+              another language or framework is fine if it meets the same
+              behavioral expectations.
             </li>
             <li>
               <b>Late days:</b> each student has 6 late days for the semester,
