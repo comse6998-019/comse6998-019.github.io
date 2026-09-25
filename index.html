@@ -196,37 +196,50 @@
             Three team assignments build one agent incrementally. Each is graded
             once after submission. Full briefs are released with each
             assignment; deadlines are in the <a href="#schedule">schedule</a>
-            <b>&mdash; HW1 is due before class, HW2 and HW3 at the end of the
-            meeting day. Assignment topics below are tentative and will be
-            filled out before release; the HW2 and HW3 deadlines are
-            tentative.</b>
+            <b>&mdash; HW1 is due Friday, October 16, before 11:59pm; HW2 and
+            HW3 are due at the end of the meeting day. HW1 is released; the
+            HW2 and HW3 topics and deadlines below are tentative and will be
+            filled out before release.</b>
           </p>
           <ul>
             <li>
-              <b>HW1</b>: Bounded agent execution
+              <b>HW1</b>: Bounded agent execution &mdash;
+              <a href="https://github.com/comse6998-019/hw1-agent-architectures/blob/main/briefs/hw1.pdf">Brief (PDF)</a>
+              &middot;
+              <a href="https://github.com/comse6998-019/hw1-agent-architectures">Repository</a>
+              (schemas, required scan blocks, example output)
               <ul>
                 <li>
-                  Build a bounded triage application over a pinned repository:
-                  an intake stage that runs pinned Semgrep and Bandit and
-                  normalizes both outputs into one alert contract, a planner, a
-                  sequential reactive investigation loop with local search/read
-                  tools, structured TP/FP/Other findings with evidence
-                  references, and a report across the selected alerts.
+                  Build a bounded agent for Bandit alert classification: scan a
+                  pinned Python repository with Bandit 1.9.4 at MEDIUM or higher
+                  severity and label every alert 1 (potential vulnerability) or
+                  0 (not a vulnerability) with a rationale and line evidence.
+                  The brief fixes the command line, the TOML configuration, the
+                  report.json and trace.jsonl outputs, and the README contract,
+                  each validated against a shipped JSON Schema; everything
+                  behind them is your design. There is no starter code.
                 </li>
                 <li>
-                  Add a configurable per-investigation token budget: pre-call
-                  admission with an output allowance, post-call reconciliation
-                  of reported usage, and an explicit exhaustion outcome.
+                  Three pinned targets: OWASP BenchmarkPython is the development
+                  set, with an answer key you may read and your agent may not;
+                  Radicale and SGLang are held out. Each target has a required
+                  scan block that graders run unchanged.
                 </li>
                 <li>
-                  Experiment: one normal run over a small alert set and one
-                  scripted exhaustion run on a single investigation, showing the
-                  runtime refuses an unaffordable invocation. The report explains
-                  which decisions are fixed at design time and which are deferred
-                  to the model, your state model, and the architecture you
-                  adopted and why. The lecture demo (V0&ndash;V4) is published as
-                  scaffolding; the intake contract, budget policy, exhaustion
-                  outcome, and evidence resolution must be your own.
+                  Required mechanisms: a disposable workspace that withholds
+                  .git and the answer key behind one path check; a dispatcher
+                  that turns unknown tools and bad arguments into refusal
+                  observations; a run-level token budget charged from
+                  provider-reported usage and checked before each model call,
+                  with an explicit budget-exhausted outcome for unclassified
+                  alerts; a step limit and a no-progress detector; and an
+                  append-only trace whose invariants graders check.
+                </li>
+                <li>
+                  Marked out of 20, one point per item: design report (7),
+                  implementation (10), evidence and README (3). Classification
+                  accuracy is collected for teaching only and does not affect
+                  the grade. Released September 25; due October 16.
                 </li>
               </ul>
             </li>
@@ -428,8 +441,17 @@
               <td>3</td>
               <td>Fri Sep 25</td>
               <td>Termination, token budgets, and controlled measurement: admission versus accounting, output reservations, exhaustion outcomes</td>
-              <td><i>-</i></td>
-              <td>HW1 <span class="pill pill-out">out</span></td>
+              <td>
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-3--2026-09-25/lecture3.pptx">Slides</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-3--2026-09-25/lecture3-hw.pptx">HW1 slides</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-3--2026-09-25/notes/lecture_notes.pdf">Notes</a>
+              </td>
+              <td>
+                <a href="https://github.com/comse6998-019/hw1-agent-architectures/blob/main/briefs/hw1.pdf">HW1</a>
+                <span class="pill pill-out">out</span>
+              </td>
             </tr>
             <tr class="u2">
               <td>4</td>
@@ -451,7 +473,8 @@
               <td>Controlled execution experiments: sequential and concurrent timelines, dependency stalls, overhead, one failure trace. Agentic security: guarding the tool boundary against prompt injection and abuse</td>
               <td><i>-</i></td>
               <td>
-                HW1 <span class="pill pill-due">due</span>
+                <a href="https://github.com/comse6998-019/hw1-agent-architectures/blob/main/briefs/hw1.pdf">HW1</a>
+                <span class="pill pill-due">due</span>
                 <br />
                 HW2 <span class="pill pill-out">out</span>
               </td>
