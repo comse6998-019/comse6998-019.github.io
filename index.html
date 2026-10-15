@@ -204,10 +204,9 @@
             Three team assignments build one agent incrementally. Each is graded
             once after submission. Full briefs are released with each
             assignment; deadlines are in the <a href="#schedule">schedule</a>
-            <b>&mdash; HW1 is due Friday, October 16, before 11:59pm; HW2 and
-            HW3 are due at the end of the meeting day. HW1 is released; the
-            HW2 and HW3 topics and deadlines below are tentative and will be
-            filled out before release.</b>
+            <b>&mdash; HW1 is due Friday, October 16, before 11:59pm; HW2 is
+            due Friday, November 13, before 11:59pm. HW1 and HW2 are released;
+            the HW3 topic and deadline below are tentative.</b>
           </p>
           <ul>
             <li>
@@ -254,32 +253,41 @@
               </ul>
             </li>
             <li>
-              <b>HW2</b>: Tool interfaces and coordinated execution
+              <b>HW2</b>: Two agents over CLDK, one local and one on MCP &mdash;
+              <a href="https://github.com/comse6998-019/hw2-tool-boundary/blob/main/briefs/hw2.pdf">Brief (PDF)</a>
+              &middot;
+              <a href="https://github.com/comse6998-019/hw2-tool-boundary">Repository</a>
+              (schemas, examples, fixtures, the CLDK server shown in class)
               <ul>
                 <li>
-                  Wrap CLDK as an MCP server: expose its analysis surface as
-                  tools, not a hand-picked pair of operations, and connect the
-                  agent to it.
+                  Build two agents from your HW1 code: a local code-action agent
+                  whose action is a Python script run against the CLDK 2.0
+                  analysis API, and an MCP agent whose every tool is served by a
+                  server you write, with analysis, text and write tools.
                 </li>
                 <li>
-                  Compare that structured-tool interface against a CodeAct-style
-                  code-action interface over the same analyses, and say which
-                  operations each one makes cheap or awkward.
+                  Classify alerts with program analysis: does the request value
+                  reach the SQL string? Patch the alerts you label real,
+                  accepted by three mechanical checks including a fresh Bandit
+                  rescan.
                 </li>
                 <li>
-                  Organize the application into explicit stages with conditional
-                  routing, and parallelize one independent read-only section
-                  under a bounded concurrency limit.
+                  State three rules, what the agent may read, write and connect
+                  to, and enforce each at the places that can hold it: the
+                  prompt, your server, and the operating-system kernel through
+                  an OpenShell sandbox.
                 </li>
                 <li>
-                  Experiment: the same fixed work run sequentially and
-                  concurrently. The report also compares the direct and MCP tool
-                  paths.
+                  Staff test the guardrails from outside your code, driving your
+                  server and your sandbox; you measure both agents under a
+                  planted injection.
                 </li>
                 <li>
-                  Guard the tool boundary against prompt injection and similar
-                  abuse, for example with
-                  <a href="https://docs.arcjet.com">Arcjet</a>.
+                  Marked out of 18, one point per item, scaled to 20% of the
+                  grade. Released October 16; due November 13 before 11:59pm.
+                  OpenShell runs on Linux, Apple Silicon macOS, or WSL 2 with
+                  Docker or Podman; Intel Macs follow the VM recipe in the
+                  brief.
                 </li>
               </ul>
             </li>
@@ -313,8 +321,8 @@
             <li>
               <b>Midterm</b> (October 23): one hour, individual, closed book.
               Covers units 1&ndash;2 &mdash; dynamic control, token accounting
-              and admission, tool contracts, action representation, scheduling
-              tradeoffs, and agentic security at the tool boundary.
+              and admission, tool contracts, action representation, and agentic
+              security at the tool boundary.
             </li>
             <li>
               <b>Final</b> (December 17): individual, closed book. Emphasizes
@@ -347,11 +355,10 @@
           </table>
           <h3>Rubric</h3>
           <p>
-            Each homework is marked out of 20 on four criteria worth 5 points
-            each: systems design and claim, experimental design, evidence and
-            reproducibility, and interpretation and limitations. A sound
-            experiment earns full credit without a speedup, a token reduction,
-            or a confirmed hypothesis; a missing required mechanism does not.
+            Each homework brief lists its rubric items, one point each (HW1 has
+            20, HW2 has 18), scaled to the assignment's weight. A missing
+            required mechanism cannot earn its point; classification accuracy is
+            collected for teaching only.
           </p>
 
           <h3>Submitting coursework</h3>
@@ -488,13 +495,22 @@
             <tr class="u2">
               <td>6</td>
               <td>Fri Oct 16</td>
-              <td>Controlled execution experiments: sequential and concurrent timelines, dependency stalls, overhead, one failure trace. Agentic security: guarding the tool boundary against prompt injection and abuse</td>
-              <td><i>-</i></td>
+              <td>The enforcement point: where a rule is enforced and what bypasses each place; model-based controls under tool use; OpenShell: sandbox, policy, credential substitution, proposals; the sandbox research. HW2 release: the CLDK SDK and an MCP server over it</td>
+              <td>
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6.pptx">Slides</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6-hw2.pptx">HW2 slides</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/cldk-mcp.ipynb">Notebook</a>
+                &middot;
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6-reading.pdf">Reading (PDF)</a>
+              </td>
               <td>
                 <a href="https://github.com/comse6998-019/hw1-agent-architectures/blob/main/briefs/hw1.pdf">HW1</a>
                 <span class="pill pill-due">due</span>
                 <br />
-                HW2 <span class="pill pill-out">out</span>
+                <a href="https://github.com/comse6998-019/hw2-tool-boundary/blob/main/briefs/hw2.pdf">HW2</a>
+                <span class="pill pill-out">out</span>
               </td>
             </tr>
             <tr class="exam">
@@ -507,7 +523,7 @@
             <tr class="u3">
               <td>8</td>
               <td>Fri Oct 30</td>
-              <td>Context working sets, compaction, and provenance: selection versus lossy summarization, artifact references, source identity</td>
+              <td>Concurrency and multi-agent patterns: dependency graphs, bounded concurrency, fork and join, supervisor and worker</td>
               <td><i>-</i></td>
               <td></td>
             </tr>
@@ -524,7 +540,8 @@
               <td>Deployment and service lifecycle: reconciliation, Pods and Services, readiness and liveness, ephemeral versus persistent storage</td>
               <td><i>-</i></td>
               <td>
-                HW2 <span class="pill pill-due">due</span>
+                <a href="https://github.com/comse6998-019/hw2-tool-boundary/blob/main/briefs/hw2.pdf">HW2</a>
+                <span class="pill pill-due">due</span>
                 <br />
                 HW3 <span class="pill pill-out">out</span>
               </td>
