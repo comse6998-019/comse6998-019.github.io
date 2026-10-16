@@ -205,7 +205,7 @@
             once after submission. Full briefs are released with each
             assignment; deadlines are in the <a href="#schedule">schedule</a>
             <b>&mdash; HW1 is due Friday, October 16, before 11:59pm; HW2 is
-            due Friday, November 13, before 11:59pm. HW1 and HW2 are released;
+            due Friday, November 20, before 11:59pm. HW1 and HW2 are released;
             the HW3 topic and deadline below are tentative.</b>
           </p>
           <ul>
@@ -272,10 +272,11 @@
                   rescan.
                 </li>
                 <li>
-                  State three rules, what the agent may read, write and connect
-                  to, and enforce each at the places that can hold it: the
-                  prompt, your server, and the operating-system kernel through
-                  an OpenShell sandbox.
+                  State rules for what each agent may read, write and reach over
+                  the network, and enforce them at the places that can hold
+                  them: the prompt, your server, and the operating-system kernel
+                  through an OpenShell sandbox. Compare the two agents to show
+                  which rules depend on the server.
                 </li>
                 <li>
                   Staff test the guardrails from outside your code, driving your
@@ -283,10 +284,12 @@
                   planted injection.
                 </li>
                 <li>
-                  Marked out of 18, one point per item, scaled to 20% of the
-                  grade. Released October 16; due November 13 before 11:59pm.
-                  OpenShell runs on Linux, Apple Silicon macOS, or WSL 2 with
-                  Docker or Podman; Intel Macs follow the VM recipe in the
+                  Marked out of 19, one point per item: design report (5),
+                  implementation (9), evidence and README (5), scaled to 20% of
+                  the grade. Released October 16; due November 20 before
+                  11:59pm. OpenShell runs on Linux, Apple Silicon macOS, or
+                  Windows with WSL 2, with Docker or Podman; on an Intel Mac or
+                  Windows without WSL 2, follow the Ubuntu VM recipe in the
                   brief.
                 </li>
               </ul>
@@ -356,7 +359,7 @@
           <h3>Rubric</h3>
           <p>
             Each homework brief lists its rubric items, one point each (HW1 has
-            20, HW2 has 18), scaled to the assignment's weight. A missing
+            20, HW2 has 19), scaled to the assignment's weight. A missing
             required mechanism cannot earn its point; classification accuracy is
             collected for teaching only.
           </p>
@@ -495,15 +498,19 @@
             <tr class="u2">
               <td>6</td>
               <td>Fri Oct 16</td>
-              <td>The enforcement point: where a rule is enforced and what bypasses each place; model-based controls under tool use; OpenShell: sandbox, policy, credential substitution, proposals; the sandbox research. HW2 release: the CLDK SDK and an MCP server over it</td>
+              <td>Recap of lecture 5: the MCP connection model and incident analysis with OWASP and ATLAS. The enforcement point: model-based security controls and how tool use weakens a model's refusals; enforcement points, trust boundaries, and the bypass of each. An introduction to OpenShell: the gateway, supervisor, and sandbox components; reduced privileges at startup; a policy block by block; credential providers that keep keys out of the sandbox; denied requests as proposals; diagnosis from logs; what OpenShell does not cover. Sandbox research: container escapes, Sandlock's threat model. Midterm scope. HW2 release: the CLDK SDK, an MCP server over it, and a code-action agent</td>
               <td>
                 <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6.pptx">Slides</a>
                 &middot;
                 <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6-hw2.pptx">HW2 slides</a>
                 &middot;
-                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/cldk-mcp.ipynb">Notebook</a>
-                &middot;
                 <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/lecture6-reading.pdf">Reading (PDF)</a>
+                &middot;
+                <a href="openshell.html">OpenShell guide</a>
+                &middot;
+                Notebooks:
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/cldk-mcp.ipynb">CLDK over MCP</a>,
+                <a href="https://github.com/comse6998-019/lectures/blob/main/lecture-6--2026-10-16/cldk-codeact.ipynb">CLDK code action</a>
               </td>
               <td>
                 <a href="https://github.com/comse6998-019/hw1-agent-architectures/blob/main/briefs/hw1.pdf">HW1</a>
@@ -539,19 +546,17 @@
               <td>Fri Nov 13</td>
               <td>Deployment and service lifecycle: reconciliation, Pods and Services, readiness and liveness, ephemeral versus persistent storage</td>
               <td><i>-</i></td>
-              <td>
-                <a href="https://github.com/comse6998-019/hw2-tool-boundary/blob/main/briefs/hw2.pdf">HW2</a>
-                <span class="pill pill-due">due</span>
-                <br />
-                HW3 <span class="pill pill-out">out</span>
-              </td>
+              <td>HW3 <span class="pill pill-out">out</span></td>
             </tr>
             <tr class="u4">
               <td>11</td>
               <td>Fri Nov 20</td>
               <td>Partial failure and bounded recovery: deadlines, retry amplification, backoff, idempotent writes, uncertain outcomes</td>
               <td><i>-</i></td>
-              <td></td>
+              <td>
+                <a href="https://github.com/comse6998-019/hw2-tool-boundary/blob/main/briefs/hw2.pdf">HW2</a>
+                <span class="pill pill-due">due</span>
+              </td>
             </tr>
             <tr class="brk">
               <td></td>
